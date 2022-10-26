@@ -16,3 +16,5 @@ C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagementClient\obj\Debug\n
 C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagementClient\obj\Debug\net6.0\FlixOne.InventoryManagementClient.pdb
 C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagementClient\obj\Debug\net6.0\FlixOne.InventoryManagementClient.genruntimeconfig.cache
 C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagementClient\obj\Debug\net6.0\ref\FlixOne.InventoryManagementClient.dll
+C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagementClient\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagementClient\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll

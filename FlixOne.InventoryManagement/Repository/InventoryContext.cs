@@ -1,4 +1,5 @@
 ﻿using FlixOne.InventoryManagement.Interfaces;
+using FlixOne.InventoryManagement.Models;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlixOne.InventoryManagement
+namespace FlixOne.InventoryManagement.Repository
 {
     internal class InventoryContext : IInventoryContext
     {
@@ -18,16 +19,16 @@ namespace FlixOne.InventoryManagement
         {
             get
             {
-                //if( _context == null )
-                //{
-                    //lock (_lock)
-                    //{
-                        if(_context == null)
+                if( _context == null )
+                {
+                    lock (_lock)
+                    {
+                        if (_context == null)
                         {
                             _context = new InventoryContext();
                         }
-                    //}
-                //}
+                    }
+                }
 
                 return _context;
             }
@@ -41,10 +42,8 @@ namespace FlixOne.InventoryManagement
         }
         public bool AddBook(string name)
         {
-            lock (_lock)
-            {
-                _books.TryAdd(name, new Book { Name = name });
-            }
+
+            _books.TryAdd(name, new Book { Name = name });
             return true;
         }
 
@@ -55,7 +54,7 @@ namespace FlixOne.InventoryManagement
 
         public bool UpdateQuantity(string name, int quantity)
         {
-            lock(_lock)
+            lock (_lock)
             {
                 _books[name].Quantity += quantity;
             }

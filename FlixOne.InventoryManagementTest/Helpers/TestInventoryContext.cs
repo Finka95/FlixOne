@@ -1,12 +1,12 @@
-﻿using FlixOne.InventoryManagement;
-using FlixOne.InventoryManagement.Interfaces;
+﻿using FlixOne.InventoryManagement.Interfaces;
+using FlixOne.InventoryManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlixOne.InventoryManagementTest
+namespace FlixOne.InventoryManagementTest.Helpers
 {
     public class TestInventoryContext : IInventoryContext
     {

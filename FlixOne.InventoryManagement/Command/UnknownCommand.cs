@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlixOne.InventoryManagement
+namespace FlixOne.InventoryManagement.Command
 {
     internal class UnknownCommand : NonTerminatingCommand
     {
@@ -15,7 +15,7 @@ namespace FlixOne.InventoryManagement
 
         internal override bool InternalCommand()
         {
-            Interfase.WriteWarning("Unable t odetermine the dessired command.");
+            Interface.WriteWarning("Unable t odetermine the dessired command.");
             return false;
         }
     }

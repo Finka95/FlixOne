@@ -1,6 +1,8 @@
 ﻿using System.Globalization;
 using FlixOne.InventoryManagement;
+using FlixOne.InventoryManagement.Command;
 using FlixOne.InventoryManagement.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FlixOne.InventoryManagementClient
 {
@@ -11,13 +13,16 @@ namespace FlixOne.InventoryManagementClient
             IServiceCollection services = new ServiceCollection();
             ConfigureServices(services);
             IServiceProvider serviceProvider = services.BuildServiceProvider();
+
             var service = serviceProvider.GetService<ICatalogService>();
             service.Run();
+
             Console.WriteLine("CatalogService has completed.");
+            Console.ReadLine();
         }
         private static void ConfigureServices(IServiceCollection services)
         {
-            // Добавляем сервисы приложения
+            // Add application services.
             services.AddTransient<IUserInterface, ConsoleUserInterface>();
             services.AddTransient<ICatalogService, CatalogService>();
             services.AddTransient<IInventoryCommandFactory, InventoryCommandFactory>();

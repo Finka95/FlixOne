@@ -1,4 +1,5 @@
 ﻿using FlixOne.InventoryManagement;
+using FlixOne.InventoryManagement.Command;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace FlixOne.InventoryManagementTest
         [TestMethod]
         public void UnknownCommand_Successfull()
         {
-            var expectedInterface = new TestUserInterface(
+            var expectedInterface = new Helpers.TestUserInterface(
                 new List<Tuple<string, string>>(),
                 new List<string>(),
                 new List<string>

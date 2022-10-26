@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FlixOne.InventoryManagement.Interfaces;
 
-namespace FlixOne.InventoryManagement
+namespace FlixOne.InventoryManagement.Command
 {
     internal class AddInventoryCommand : NonTerminatingCommand, IParameterisedCommand
     {

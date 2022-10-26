@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlixOne.InventoryManagement
+namespace FlixOne.InventoryManagement.Command
 {
     internal class QuitCommand : InventoryCommand
     {
@@ -14,7 +14,7 @@ namespace FlixOne.InventoryManagement
 
         internal override bool InternalCommand()
         {
-            Interfase.WriteMessage("Thank you for using FlixOne Inventory Management System");
+            Interface.WriteMessage("Thank you for using FlixOne Inventory Management System");
             return true;
         }
     }

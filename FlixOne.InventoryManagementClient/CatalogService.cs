@@ -1,5 +1,12 @@
+using System.Reflection;
+
 namespace FlixOne.InventoryManagement.Interfaces
 {
+    interface ICatalogService
+    {
+        void Run();
+    }
+
     public class CatalogService : ICatalogService
     {
         private readonly IUserInterface _userInterface;
@@ -13,13 +20,16 @@ namespace FlixOne.InventoryManagement.Interfaces
         public void Run()
         {
             Greeting();
+
             var response = _commandFactory.GetCommand("?").RunCommand();
+
             while (!response.shouldQuit)
             {
-                // посмотрите на ошибку с ToLower()
                 var input = _userInterface.ReadValue("> ").ToLower();
                 var command = _commandFactory.GetCommand(input);
+
                 response = command.RunCommand();
+
                 if (!response.wasSuccessful)
                 {
                     _userInterface.WriteMessage("Enter ? to view options.");
@@ -29,7 +39,15 @@ namespace FlixOne.InventoryManagement.Interfaces
 
         private void Greeting()
         {
-            _userInterface.WriteMessage("Hello!!");
+            // get version and display
+            var version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
+            _userInterface.WriteMessage("*********************************************************************************************");
+            _userInterface.WriteMessage("*                                                                                           *");
+            _userInterface.WriteMessage("*               Welcome to FlixOne Inventory Management System                              *");
+            _userInterface.WriteMessage($"*                                                                                v{version}   *");
+            _userInterface.WriteMessage("*********************************************************************************************");
+            _userInterface.WriteMessage("");
         }
     }
 }

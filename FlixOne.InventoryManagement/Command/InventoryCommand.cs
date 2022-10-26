@@ -5,29 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using FlixOne.InventoryManagement.Interfaces;
 
-namespace FlixOne.InventoryManagement
+namespace FlixOne.InventoryManagement.Command
 {
     public abstract class InventoryCommand
     {
         private readonly bool _isTerminatingCommand;
-        private bool commandIsTerminating;
 
-        protected IUserInterface Interfase { get; }
+        protected IUserInterface Interface { get; }
 
         protected InventoryCommand(bool commandIsTerminating, IUserInterface userInterface)
         {
             _isTerminatingCommand = commandIsTerminating;
-            Interfase = userInterface;
-        }
-
-        protected InventoryCommand(bool commandIsTerminating)
-        {
-            this.commandIsTerminating = commandIsTerminating;
+            Interface = userInterface;
         }
 
         public (bool wasSuccessful, bool shouldQuit) RunCommand()
         {
-            if(this is IParameterisedCommand parameterisedCommand)
+            if (this is IParameterisedCommand parameterisedCommand)
             {
                 var allParametersComplited = false;
 
@@ -44,7 +38,7 @@ namespace FlixOne.InventoryManagement
 
         internal string GetParameter(string parameterName)
         {
-            return Interfase.ReadValue($"Enter {parameterName}:");
+            return Interface.ReadValue($"Enter {parameterName}:");
         }
     }
 }

@@ -1,16 +1,17 @@
 ﻿using FlixOne.InventoryManagement.Interfaces;
+using FlixOne.InventoryManagement.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlixOne.InventoryManagement
+namespace FlixOne.InventoryManagement.Command
 {
     public class InventoryCommandFactory : IInventoryCommandFactory
     {
         private readonly IUserInterface _userInterface;
-        private readonly IInventoryContext _context = InventoryContext.Instance;
+        private readonly IInventoryContext _context = InventoryContext.Singleton;
 
         public InventoryCommandFactory(IUserInterface userInterface)
         {
@@ -19,7 +20,7 @@ namespace FlixOne.InventoryManagement
 
         public InventoryCommand GetCommand(string input)
         {
-            switch(input.ToLower())
+            switch (input.ToLower())
             {
                 case "q":
                 case "quit":

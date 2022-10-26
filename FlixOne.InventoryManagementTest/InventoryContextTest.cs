@@ -1,5 +1,5 @@
-﻿using FlixOne.InventoryManagement;
-using FlixOne.InventoryManagement.Interfaces;
+﻿using FlixOne.InventoryManagement.Interfaces;
+using FlixOne.InventoryManagement.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;

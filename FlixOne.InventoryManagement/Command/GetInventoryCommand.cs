@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlixOne.InventoryManagement
+namespace FlixOne.InventoryManagement.Command
 {
     public class GetInventoryCommand : NonTerminatingCommand
     {
@@ -20,7 +20,7 @@ namespace FlixOne.InventoryManagement
         {
             foreach (var book in _context.GetBooks())
             {
-                Interfase.WriteMessage($"{book.Name,-30}\tQuantity:{book.Quantity}");
+                Interface.WriteMessage($"{book.Name,-30}\tQuantity:{book.Quantity}");
             }
             return true;
         }
