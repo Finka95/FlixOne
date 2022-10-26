@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FlixOne.InventoryManagementClient/1.0.0": {
+        "dependencies": {
+          "FlixOne.InventoryManagement": "1.0.0"
+        },
+        "runtime": {
+          "FlixOne.InventoryManagementClient.dll": {}
+        }
+      },
+      "FlixOne.InventoryManagement/1.0.0": {
+        "runtime": {
+          "FlixOne.InventoryManagement.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FlixOne.InventoryManagementClient/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FlixOne.InventoryManagement/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

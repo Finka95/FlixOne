@@ -1,0 +1,12 @@
+C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagement\bin\Debug\net6.0\FlixOne.InventoryManagement.deps.json
+C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagement\bin\Debug\net6.0\FlixOne.InventoryManagement.dll
+C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagement\bin\Debug\net6.0\FlixOne.InventoryManagement.pdb
+C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagement\obj\Debug\net6.0\FlixOne.InventoryManagement.csproj.AssemblyReference.cache
+C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagement\obj\Debug\net6.0\FlixOne.InventoryManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagement\obj\Debug\net6.0\FlixOne.InventoryManagement.AssemblyInfoInputs.cache
+C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagement\obj\Debug\net6.0\FlixOne.InventoryManagement.AssemblyInfo.cs
+C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagement\obj\Debug\net6.0\FlixOne.InventoryManagement.csproj.CoreCompileInputs.cache
+C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagement\obj\Debug\net6.0\FlixOne.InventoryManagement.dll
+C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagement\obj\Debug\net6.0\refint\FlixOne.InventoryManagement.dll
+C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagement\obj\Debug\net6.0\FlixOne.InventoryManagement.pdb
+C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagement\obj\Debug\net6.0\ref\FlixOne.InventoryManagement.dll
