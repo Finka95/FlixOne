@@ -9,12 +9,12 @@ namespace FlixOne.InventoryManagement.Command
 {
     internal class UpdateQuantityCommand : NonTerminatingCommand, IParameterisedCommand
     {
-        private readonly IInventoryContext _context;
+        private readonly IWriteInventoryContext _context;
         public string InventoryName { get; set; }
         private int _quantity;
         internal int Quantity { get => _quantity; private set => _quantity = value; }
 
-        public UpdateQuantityCommand(IUserInterface userInterface, IInventoryContext context) : base(userInterface)
+        public UpdateQuantityCommand(IUserInterface userInterface, IWriteInventoryContext context) : base(userInterface)
         {
             _context = context;
         }

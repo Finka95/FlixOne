@@ -1,4 +1,7 @@
 ﻿using FlixOne.InventoryManagement.Command;
+using FlixOne.InventoryManagement.Interfaces;
+using FlixOne.InventoryManagement.Repository;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,12 +18,13 @@ namespace FlixOne.InventoryManagementTest
         [TestInitialize]
         public void Initialize()
         {
+            var context = GetInventoryContext();
             var expectedInterface = new Helpers.TestUserInterface(
                  new List<Tuple<string, string>>(),
                  new List<string>(),
                  new List<string>()
                  );
-            Factory = new InventoryCommandFactory(expectedInterface);
+            Factory = new InventoryCommandFactory(expectedInterface, context);
         }
 
         [TestMethod]
@@ -54,6 +58,14 @@ namespace FlixOne.InventoryManagementTest
             Assert.IsInstanceOfType(Factory.GetCommand("u"), typeof(UpdateQuantityCommand), "u should be UpdateQuantityCommand");
             Assert.IsInstanceOfType(Factory.GetCommand("updatequantity"), typeof(UpdateQuantityCommand), "updatequantity should be UpdateQuantityCommand");
             Assert.IsInstanceOfType(Factory.GetCommand("UpdaTEQuantity"), typeof(UpdateQuantityCommand), "UpdaTEQuantity should be UpdateQuantityCommand");
+        }
+
+        private IInventoryContext GetInventoryContext()
+        {
+            IServiceCollection services = new ServiceCollection();
+            services.AddSingleton<IInventoryContext, InventoryContext>();
+            var provider = services.BuildServiceProvider();
+            return provider.GetService<IInventoryContext>();
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace FlixOne.InventoryManagement.Command;
 
-public class HelpCommand : NonTerminatingCommand
+internal class HelpCommand : NonTerminatingCommand
 {
     public HelpCommand(IUserInterface userInterface) : base(userInterface)
     {

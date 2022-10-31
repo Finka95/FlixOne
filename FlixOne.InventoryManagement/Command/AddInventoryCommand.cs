@@ -9,10 +9,10 @@ namespace FlixOne.InventoryManagement.Command
 {
     internal class AddInventoryCommand : NonTerminatingCommand, IParameterisedCommand
     {
-        private readonly IInventoryContext _context;
+        private readonly IWriteInventoryContext _context;
         public string InventoryName { get; set; }
 
-        public AddInventoryCommand(IUserInterface userInterface, IInventoryContext context) : base(userInterface)
+        public AddInventoryCommand(IUserInterface userInterface, IWriteInventoryContext context) : base(userInterface)
         {
             _context = context;
         }

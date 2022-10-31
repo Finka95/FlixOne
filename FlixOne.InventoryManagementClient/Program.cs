@@ -2,6 +2,7 @@
 using FlixOne.InventoryManagement;
 using FlixOne.InventoryManagement.Command;
 using FlixOne.InventoryManagement.Interfaces;
+using FlixOne.InventoryManagement.Repository;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FlixOne.InventoryManagementClient
@@ -25,7 +26,14 @@ namespace FlixOne.InventoryManagementClient
             // Add application services.
             services.AddTransient<IUserInterface, ConsoleUserInterface>();
             services.AddTransient<ICatalogService, CatalogService>();
-            services.AddTransient<IInventoryCommandFactory, InventoryCommandFactory>();
+
+            // command usign a function
+            services.AddTransient<Func<string, InventoryCommand>>(InventoryCommand.GetInventoryCommand);
+
+            var context = new InventoryContext();
+            services.AddSingleton<IReadInventoryContext, InventoryContext>(p => context);
+            services.AddSingleton<IWriteInventoryContext, InventoryContext>(p => context);
+            services.AddSingleton<IInventoryContext, InventoryContext>(p => context);
         }
     }
 }

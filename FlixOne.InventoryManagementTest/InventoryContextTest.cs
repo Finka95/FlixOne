@@ -3,18 +3,30 @@ using FlixOne.InventoryManagement.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FlixOne.InventoryManagementTest
 {
     [TestClass]
     public class InventoryContextTest
     {
+        private ServiceProvider _serviceProvider;
+
+        [TestInitialize]
+        public void Startup()
+        {
+            IServiceCollection services = new ServiceCollection();
+            services.AddSingleton<IInventoryContext, InventoryContext>();
+            _serviceProvider = services.BuildServiceProvider();
+        }
+
         [TestMethod]
         public void MaintainBooks_Succesful()
         {
-            var context = InventoryContext.Singleton;
+            var context = _serviceProvider.GetService<IInventoryContext>();
             List<Task> tasks = new List<Task>();
 
             // add 30 books
@@ -56,7 +68,7 @@ namespace FlixOne.InventoryManagementTest
         {
             return Task.Run(() =>
             {
-                var context = InventoryContext.Singleton;
+                var context = _serviceProvider.GetService<IInventoryContext>();
                 Assert.IsTrue(context.AddBook(book));
             });
         }
@@ -65,7 +77,7 @@ namespace FlixOne.InventoryManagementTest
         {
             return Task.Run(() =>
             {
-                var context = InventoryContext.Singleton;
+                var context = _serviceProvider.GetService<IInventoryContext>();
                 Assert.IsTrue(context.UpdateQuantity(book, quantity));
             });
         }

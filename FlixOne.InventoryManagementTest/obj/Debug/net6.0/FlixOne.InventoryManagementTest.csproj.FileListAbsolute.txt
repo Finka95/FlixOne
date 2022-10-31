@@ -99,3 +99,5 @@ C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagementTest\obj\Debug\net
 C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagementTest\obj\Debug\net6.0\FlixOne.InventoryManagementTest.pdb
 C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagementTest\obj\Debug\net6.0\FlixOne.InventoryManagementTest.genruntimeconfig.cache
 C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagementTest\obj\Debug\net6.0\ref\FlixOne.InventoryManagementTest.dll
+C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagementTest\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Vlad\source\repos\FlixOne\FlixOne.InventoryManagementTest\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll

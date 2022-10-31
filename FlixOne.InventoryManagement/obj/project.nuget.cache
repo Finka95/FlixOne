@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Knwph3Csfig0XB9xGSukfz/ByS4ceGEIC7AqmJj+O1xsVftaE8a0DG4cUCNJ3lrczwd7z+5LkT5+eMrh2xGX6g==",
+  "dgSpecHash": "Hu+FqiViIZ6Hgb2nPlFe8JcnIFTLy2HjKOoSNTmb6tfh4PQPcWSV80zWZ3LRrDFg1YPAkt5z6n1YPrgY71CLqQ==",
   "success": true,
   "projectFilePath": "c:\\Users\\Vlad\\source\\repos\\FlixOne\\FlixOne.InventoryManagement\\FlixOne.InventoryManagement.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Vlad\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.1\\microsoft.extensions.dependencyinjection.6.0.1.nupkg.sha512",
+    "C:\\Users\\Vlad\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Vlad\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

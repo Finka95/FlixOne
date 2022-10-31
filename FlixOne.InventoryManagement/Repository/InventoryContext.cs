@@ -9,41 +9,19 @@ using System.Threading.Tasks;
 
 namespace FlixOne.InventoryManagement.Repository
 {
-    internal class InventoryContext : IInventoryContext
+    public class InventoryContext : IInventoryContext
     {
-        private static InventoryContext _context;
         private static object _lock = new object();
-        private readonly ConcurrentDictionary<string, Book> _books;
+        private readonly IDictionary<string,Book> _books;
 
-        public static InventoryContext Singleton
-        {
-            get
-            {
-                if( _context == null )
-                {
-                    lock (_lock)
-                    {
-                        if (_context == null)
-                        {
-                            _context = new InventoryContext();
-                        }
-                    }
-                }
-
-                return _context;
-            }
-        }
-
-        public static IInventoryContext Instance { get; internal set; }
-
-        protected InventoryContext()
+        public InventoryContext()
         {
             _books = new ConcurrentDictionary<string, Book>();
         }
         public bool AddBook(string name)
         {
 
-            _books.TryAdd(name, new Book { Name = name });
+            _books.Add(name, new Book { Name = name });
             return true;
         }
 
